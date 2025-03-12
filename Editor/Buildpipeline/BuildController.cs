@@ -55,7 +55,7 @@ namespace BrutalHack.Submodules.BrutalBuild.Scripts.Buildpipeline
             BuildTarget targetPlatform, iOSSdkVersion iosTargetSdk = iOSSdkVersion.DeviceSDK,
             bool isReleaseBuild = false, string[] scenePaths = null)
         {
-            BuildController.SetContext(AppContext.Release, Environment.Dev);
+            BuildController.SetContext(AppContext.Standalone, Environment.Dev);
 
             var stopwatch = new Stopwatch();
             stopwatch.Start();
