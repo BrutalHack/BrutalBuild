@@ -10,7 +10,6 @@ namespace BrutalHack.Submodules.BrutalBuild.Scripts.Buildpipeline.MenuItems
 
         private const string Release = "Release/";
         private const string ReleaseSteam = "ReleaseSteam/";
-        private const string Demo = "Demo/";
         private const string Dev = "Dev";
         private const string Prod = "Prod";
 
@@ -26,12 +25,5 @@ namespace BrutalHack.Submodules.BrutalBuild.Scripts.Buildpipeline.MenuItems
 
         public const string ChangeContextReleaseSteamProdDebug =
             ChangeContext + ReleaseSteam + Prod;
-
-
-        public const string ChangeContextDemoDevDebug =
-            ChangeContext + Demo + Dev;
-
-        public const string ChangeContextDemoProdDebug =
-            ChangeContext + Demo + Prod;
     }
 }
