@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://sympatient.com/build-config"
+		   elementFormDefault="qualified"
+		   xmlns="http://sympatient.com/build-config"
+		   xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="BuildConfig">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="UnityCloudSettings">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Id" type="xs:string"/>
+							<xs:element name="Product" type="xs:string"/>
+							<xs:element name="Company" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+
+				<xs:element name="PlayerSettings">
+					<xs:complexType>
+						<xs:sequence>
+
+							<xs:element name="General">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="CompanyName" type="xs:string"/>
+										<xs:element name="ProductName" type="xs:string"/>
+										<xs:element name="DefaultIconPath" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+
+							<xs:element name="Ios">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Icon" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<!-- Empty -->
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="ResolutionAndPresentation">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="DefaultOrientation" type="xs:string"/>
+													<xs:element name="UseAnimatedAutorotation" type="xs:boolean"/>
+
+													<xs:element name="AllowedAutorotateToPortrait"
+																type="xs:boolean"/>
+													<xs:element name="AllowedAutorotateToLandscapeLeft"
+																type="xs:boolean"/>
+													<xs:element name="AllowedAutorotateToLandscapeRight"
+																type="xs:boolean"/>
+													<xs:element name="AllowedAutorotateToPortraitUpsideDown"
+																type="xs:boolean"/>
+
+													<xs:element name="RequiresFullscreen" type="xs:boolean"/>
+													<xs:element name="StatusBarHidden" type="xs:boolean"/>
+													<xs:element name="StatusBarStyle" type="xs:string"/>
+													<xs:element name="DisableDepthAndStencil" type="xs:boolean"/>
+													<xs:element name="ShowLoadingIndicator" type="xs:string"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="SplashImage" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<!-- Nothing -->
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="DebuggingAndCrashReporting" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<!-- Nothing -->
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="OtherSettings">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="ColorSpace" type="xs:string"/>
+													<xs:element name="AutoGraphicsApi" type="xs:boolean"/>
+													<xs:element name="MetalApiValidation" type="xs:boolean"/>
+													<xs:element name="ForceHardShadowsOnMetal" type="xs:boolean"/>
+													<xs:element name="MultithreadedRendering" type="xs:boolean"/>
+													<xs:element name="GpuSkinning" type="xs:boolean"/>
+													<xs:element name="GraphicsJobs" type="xs:boolean"/>
+
+													<xs:element name="BundleIdentifier" type="xs:string"/>
+													<xs:element name="Version" type="xs:string"/>
+													<xs:element name="Build" type="xs:string"/>
+													<xs:element name="SigningTeamId" type="xs:string"/>
+													<xs:element name="AutomaticallySign" type="xs:boolean"/>
+
+													<xs:element name="ScriptingRuntimeVersion" type="xs:string"/>
+													<xs:element name="ScriptingBackend" type="xs:string"/>
+													<xs:element name="ApiCompatibilityLevel" type="xs:string"/>
+													<xs:element name="UseOnDemandResources" type="xs:boolean"/>
+													<xs:element name="AccelerometerFrequency" type="xs:int"/>
+
+													<xs:element name="CameraUsageDescription" type="xs:string"/>
+													<xs:element name="LocationUsageDescription" type="xs:string"/>
+													<xs:element name="MicrophoneUsageDescription" type="xs:string"/>
+
+													<xs:element name="MuteOtherAudioSources" type="xs:boolean"/>
+													<xs:element name="RequiresPersistentWifi" type="xs:boolean"/>
+													<xs:element name="AllowDownloadsOverHttp" type="xs:boolean"/>
+													<xs:element name="TargetDevice" type="xs:string"/>
+													<xs:element name="TargetSdk" type="xs:string"/>
+													<xs:element name="TargetMinimumIosSdk" type="xs:string"/>
+													<xs:element name="DeferSystemGesturesMode" type="xs:string"/>
+													<xs:element name="HideHomeButtonOnIphoneX" type="xs:boolean"/>
+													<xs:element name="BehaviorInBackground" type="xs:string"/>
+													<xs:element name="Architecture" type="xs:int"/>
+													<xs:element name="ScriptingDefineSymbols" type="xs:string"/>
+													<xs:element name="AllowUnsafeCode" type="xs:boolean"/>
+
+													<xs:element name="PrebakeCollisionMeshes" type="xs:boolean"/>
+													<xs:element name="AotOptions" type="xs:string"/>
+													<xs:element name="StripEngineCode" type="xs:boolean"/>
+													<xs:element name="ScriptCallOptimization" type="xs:string"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="XrSettings">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="VirtualRealitySupported" type="xs:boolean"/>
+													<xs:element name="VirtualRealitySdks">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="string" minOccurs="0"
+																			maxOccurs="unbounded"/>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+
+													<xs:element name="CardboardDepthFormat" type="xs:int"/>
+													<xs:element name="StereoRenderingMethod" type="xs:string"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+
+							<xs:element name="Android">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Icon" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<!-- Empty -->
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="ResolutionAndPresentation">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="PreserveFramebufferAlpha" type="xs:boolean"/>
+													<xs:element name="BlitType" type="xs:string"/>
+
+													<xs:element name="DefaultOrientation" type="xs:string"/>
+													<xs:element name="AllowedAutorotateToPortrait"
+																type="xs:boolean"/>
+													<xs:element name="AllowedAutorotateToLandscapeLeft"
+																type="xs:boolean"/>
+													<xs:element name="AllowedAutorotateToLandscapeRight"
+																type="xs:boolean"/>
+													<xs:element name="AllowedAutorotateToPortraitUpsideDown"
+																type="xs:boolean"/>
+
+													<xs:element name="Use32BitDisplayBuffer" type="xs:boolean"/>
+
+													<xs:element name="DisableDepthAndStencil" type="xs:boolean"/>
+													<xs:element name="ShowLoadingIndicator" type="xs:string"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="SplashImage" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<!-- Nothing -->
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="OtherSettings">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="ColorSpace" type="xs:string"/>
+													<xs:element name="AutoGraphicsApi" type="xs:boolean"/>
+													<xs:element name="MultithreadedRendering" type="xs:boolean"/>
+													<xs:element name="GpuSkinning" type="xs:boolean"/>
+													<xs:element name="GraphicsJobs" type="xs:boolean"/>
+													<xs:element name="ProtectGraphicsMemory" type="xs:boolean"/>
+
+													<xs:element name="BundleIdentifier" type="xs:string"/>
+													<xs:element name="Version" type="xs:string"/>
+													<xs:element name="BundleVersionCode" type="xs:int"/>
+													<xs:element name="MinimumApiLevel" type="xs:string"/>
+													<xs:element name="TargetSdkVersion" type="xs:string"/>
+
+													<xs:element name="ScriptingRuntimeVersion" type="xs:string"/>
+													<xs:element name="ScriptingBackend" type="xs:string"/>
+													<xs:element name="ApiCompatibilityLevel" type="xs:string"/>
+													<xs:element name="CppCompilerConfiguration" type="xs:string"/>
+
+													<xs:element name="MuteOtherAudioSources" type="xs:boolean"/>
+													<xs:element name="Architecture" type="xs:string"/>
+													<xs:element name="InstallLocation" type="xs:string"/>
+													<xs:element name="ForceInternetPermission" type="xs:boolean"/>
+													<xs:element name="ForceSdCardPermission" type="xs:boolean"/>
+
+													<xs:element name="AndroidGame" type="xs:boolean"/>
+													<xs:element name="AndroidTvCompatibility" type="xs:boolean"/>
+
+													<xs:element name="ScriptingDefineSymbols" type="xs:string"/>
+													<xs:element name="AllowUnsafeCode" type="xs:boolean"/>
+
+													<xs:element name="PrebakeCollisionMeshes" type="xs:boolean"/>
+													<xs:element name="AotOptions" type="xs:string"/>
+													<xs:element name="StripEngineCode" type="xs:boolean"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="PublishingSettings">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="KeystoreName" type="xs:string"/>
+													<xs:element name="KeyaliasName" type="xs:string"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="XrSettings">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="VirtualRealitySupported" type="xs:boolean"/>
+													<xs:element name="VirtualRealitySdks">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="string" minOccurs="0"
+																			maxOccurs="unbounded"/>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+
+													<xs:element name="CardboardDepthFormat" type="xs:int"/>
+													<xs:element name="DaydreamDepthFormat" type="xs:int"/>
+													<xs:element name="DaydreamEnableVideoSurface" type="xs:boolean"/>
+													<xs:element name="DaydreamEnableVideoSurfaceProtectedMemory"
+																type="xs:boolean"/>
+													<xs:element name="DaydreamMaximumSupportedHeadTracking"
+																type="xs:string"/>
+													<xs:element name="DaydreamMinimumSupportedHeadTracking"
+																type="xs:string"/>
+													<xs:element name="StereoRenderingMethod" type="xs:string"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+
+
+						</xs:sequence>
+					</xs:complexType>
+
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
