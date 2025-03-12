@@ -7,7 +7,6 @@ using UnityEditor;
 using UnityEngine;
 using AppContext = BrutalHack.Submodules.BrutalBuild.Scripts.Buildpipeline.Enums.AppContext;
 using Debug = UnityEngine.Debug;
-using Environment = BrutalHack.Submodules.BrutalBuild.Scripts.Buildpipeline.Enums.Environment;
 
 namespace BrutalHack.Submodules.BrutalBuild.Scripts.Buildpipeline
 {
@@ -22,7 +21,7 @@ namespace BrutalHack.Submodules.BrutalBuild.Scripts.Buildpipeline
         /// <param name="appContext"></param>
         /// <param name="environment"></param>
         /// <param name="buildType"></param>
-        public static void SetContext(AppContext appContext, Environment environment)
+        public static void SetContext(AppContext appContext, BrutalBuildEnvironment environment)
         {
             Debug.Log("Starting Context Switch.\n" +
                       "App: " + appContext + ", environment: " + environment);
@@ -51,11 +50,11 @@ namespace BrutalHack.Submodules.BrutalBuild.Scripts.Buildpipeline
         /// <param name="iosTargetSdk">If iOS, define Device or Simulator SDK</param>
         /// <param name="isReleaseBuild"></param>
         /// <exception cref="System.InvalidOperationException"></exception>
-        public static void BuildApplication(AppContext appContext, Environment environment,
+        public static void BuildApplication(AppContext appContext, BrutalBuildEnvironment environment,
             BuildTarget targetPlatform, iOSSdkVersion iosTargetSdk = iOSSdkVersion.DeviceSDK,
             bool isReleaseBuild = false, string[] scenePaths = null)
         {
-            BuildController.SetContext(AppContext.Standalone, Environment.Dev);
+            BuildController.SetContext(AppContext.Standalone, BrutalBuildEnvironment.Dev);
 
             var stopwatch = new Stopwatch();
             stopwatch.Start();
@@ -98,7 +97,7 @@ namespace BrutalHack.Submodules.BrutalBuild.Scripts.Buildpipeline
                 buildPlayerOptions.scenes = scenePaths;
             }
 
-            if (environment == Environment.Dev)
+            if (environment == BrutalBuildEnvironment.Dev)
             {
                 buildPlayerOptions.options |= BuildOptions.Development;
                 buildPlayerOptions.options |= BuildOptions.AllowDebugging;

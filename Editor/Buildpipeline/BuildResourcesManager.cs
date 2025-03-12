@@ -9,7 +9,6 @@ using BrutalHack.Submodules.BrutalBuild.Scripts.Config.Build;
 using UnityEditor;
 using UnityEngine;
 using AppContext = BrutalHack.Submodules.BrutalBuild.Scripts.Buildpipeline.Enums.AppContext;
-using Environment = BrutalHack.Submodules.BrutalBuild.Scripts.Buildpipeline.Enums.Environment;
 
 namespace BrutalHack.Submodules.BrutalBuild.Scripts.Buildpipeline
 {
@@ -17,7 +16,7 @@ namespace BrutalHack.Submodules.BrutalBuild.Scripts.Buildpipeline
 	{
 		private const string BuildResourcesPath = "Assets/BuildResources/";
 		private readonly AppContext _appContext;
-		private readonly Environment _environment;
+		private readonly BrutalBuildEnvironment _environment;
 		private readonly string _defaultContext = "Default";
 
 		private static string _runTimeResourcesDirName = "_Runtime";
@@ -28,7 +27,7 @@ namespace BrutalHack.Submodules.BrutalBuild.Scripts.Buildpipeline
 		/// <param name="appContext"></param>
 		/// <param name="environment"></param>
 		/// <param name="buildType"></param>
-		public BuildResourcesManager(AppContext appContext, Environment environment)
+		public BuildResourcesManager(AppContext appContext, BrutalBuildEnvironment environment)
 		{
 			_appContext = appContext;
 			_environment = environment;

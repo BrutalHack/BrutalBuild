@@ -10,14 +10,14 @@ namespace BrutalHack.Submodules.BrutalBuild.Scripts.Buildpipeline.MenuItems
         [MenuItem(BuildMenuLabels.ChangeContextReleaseDevDebug)]
         public static void ChangeContextGeneralDev()
         {
-            BuildController.SetContext(AppContext.Standalone, Environment.Dev);
+            BuildController.SetContext(AppContext.Standalone, BrutalBuildEnvironment.Dev);
         }
 
 
         [MenuItem(BuildMenuLabels.ChangeContextReleaseProdDebug)]
         public static void ChangeContextGeneralProd()
         {
-            BuildController.SetContext(AppContext.Standalone, Environment.Prod);
+            BuildController.SetContext(AppContext.Standalone, BrutalBuildEnvironment.Prod);
         }
 
         #endregion
@@ -27,14 +27,14 @@ namespace BrutalHack.Submodules.BrutalBuild.Scripts.Buildpipeline.MenuItems
         [MenuItem(BuildMenuLabels.ChangeContextReleaseSteamDevDebug)]
         public static void ChangeContextSteamDev()
         {
-            BuildController.SetContext(AppContext.Steam, Environment.Dev);
+            BuildController.SetContext(AppContext.Steam, BrutalBuildEnvironment.Dev);
         }
 
 
         [MenuItem(BuildMenuLabels.ChangeContextReleaseSteamProdDebug)]
         public static void ChangeContextSteamProd()
         {
-            BuildController.SetContext(AppContext.Steam, Environment.Prod);
+            BuildController.SetContext(AppContext.Steam, BrutalBuildEnvironment.Prod);
         }
 
         #endregion

@@ -1,6 +1,6 @@
 namespace BrutalHack.Submodules.BrutalBuild.Scripts.Buildpipeline.Enums
 {
-    public enum Environment
+    public enum BrutalBuildEnvironment
     {
         Dev, Prod
     }
