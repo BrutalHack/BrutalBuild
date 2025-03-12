@@ -103,7 +103,7 @@ namespace BrutalHack.Submodules.BrutalBuild.Scripts.Buildpipeline.BuildScripts
             {
                 scenes = config.BuildEditionConfig.GetAllScenePaths(),
                 locationPathName =
-                    $"Builds/{config.AppContext}/{buildTarget.ToString()}/{config.BuildEditionConfig.Name}",
+                    $"Builds/{config.AppContext}/{buildTarget.ToString()}/{config.BuildEditionConfig.Name}/{config.BuildEditionConfig.Name}",
                 target = buildTarget,
                 options = BuildOptions.None
             };
