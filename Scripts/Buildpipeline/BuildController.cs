@@ -4,6 +4,7 @@ using System.IO;
 using System.Xml.Serialization;
 using BrutalHack.Submodules.BrutalBuild.Scripts.Buildpipeline.Enums;
 using UnityEditor;
+using UnityEngine;
 using AppContext = BrutalHack.Submodules.BrutalBuild.Scripts.Buildpipeline.Enums.AppContext;
 using Debug = UnityEngine.Debug;
 using Environment = BrutalHack.Submodules.BrutalBuild.Scripts.Buildpipeline.Enums.Environment;
@@ -55,7 +56,7 @@ namespace BrutalHack.Submodules.BrutalBuild.Scripts.Buildpipeline
             bool isReleaseBuild = false, string[] scenePaths = null)
         {
             BuildController.SetContext(AppContext.Release, Environment.Dev);
-            
+
             var stopwatch = new Stopwatch();
             stopwatch.Start();
             Debug.Log("Starting Build.\n" +
@@ -129,6 +130,27 @@ namespace BrutalHack.Submodules.BrutalBuild.Scripts.Buildpipeline
         private static void PrintBuildSettings(BuildPlayerOptions buildPlayerOptions)
         {
             Debug.Log("Building " + PlayerSettings.productName + " for Platform " + buildPlayerOptions.target);
+        }
+
+        public static bool CanBuildTargetToIL2CPP(BuildTarget target)
+        {
+            return Application.platform == GetHostPlatform(target);
+        }
+
+        static RuntimePlatform GetHostPlatform(BuildTarget target)
+        {
+            switch (target)
+            {
+                case BuildTarget.StandaloneOSX:
+                    return RuntimePlatform.OSXEditor;
+                case BuildTarget.StandaloneLinux64:
+                    return RuntimePlatform.LinuxEditor;
+                case BuildTarget.StandaloneWindows:
+                case BuildTarget.StandaloneWindows64:
+                    return RuntimePlatform.WindowsEditor;
+                default:
+                    throw new Exception(string.Format("BuildTarget.{0} is not a standalone player build target!"));
+            }
         }
 
 

@@ -8,6 +8,7 @@ namespace BrutalHack.Submodules.BrutalBuild.Scripts.Config
     public static class PlayerSettingsAdapter
     {
         public static readonly GeneralPlayerSettingsManager General = new GeneralPlayerSettingsManager();
+        public static readonly StandalonePlayerSettingsManager Standalone = new StandalonePlayerSettingsManager();
         public static readonly IosPlayerSettingsManager Ios = new IosPlayerSettingsManager();
         public static readonly AndroidPlayerSettingsManager Android = new AndroidPlayerSettingsManager();
 
