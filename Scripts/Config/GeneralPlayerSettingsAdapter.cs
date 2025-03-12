@@ -6,19 +6,19 @@ namespace BrutalHack.Submodules.BrutalBuild.Scripts.Config
 {
     public class GeneralPlayerSettingsAdapter
     {
-        public string DefaultIconPath
-        {
-            get
-            {
-                var texture2D = PlayerSettings.GetIconsForTargetGroup(BuildTargetGroup.Unknown).FirstOrDefault();
-                return texture2D != null ? AssetDatabase.GetAssetPath(texture2D) : null;
-            }
-            set
-            {
-                var icon = AssetDatabase.LoadAssetAtPath<Texture2D>(value);
-                PlayerSettings.SetIconsForTargetGroup(BuildTargetGroup.Unknown, new[] {icon});
-            }
-        }
+        // public string DefaultIconPath
+        // {
+        //     get
+        //     {
+        //         var texture2D = PlayerSettings.GetIconsForTargetGroup(BuildTargetGroup.Unknown).FirstOrDefault();
+        //         return texture2D != null ? AssetDatabase.GetAssetPath(texture2D) : null;
+        //     }
+        //     set
+        //     {
+        //         var icon = AssetDatabase.LoadAssetAtPath<Texture2D>(value);
+        //         PlayerSettings.SetIconsForTargetGroup(BuildTargetGroup.Unknown, new[] {icon});
+        //     }
+        // }
 
         public string DefaultCursorPath
         {
