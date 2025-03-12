@@ -25,14 +25,14 @@ namespace BrutalHack.Submodules.BrutalBuild.Scripts.Buildpipeline.MenuItems
         #region Steam
 
         [MenuItem(BuildMenuLabels.ChangeContextReleaseSteamDevDebug)]
-        public static void ChangeContextGeneralDev()
+        public static void ChangeContextSteamDev()
         {
             BuildController.SetContext(AppContext.Steam, Environment.Dev);
         }
 
 
         [MenuItem(BuildMenuLabels.ChangeContextReleaseSteamProdDebug)]
-        public static void ChangeContextGeneralProd()
+        public static void ChangeContextSteamProd()
         {
             BuildController.SetContext(AppContext.Steam, Environment.Prod);
         }
