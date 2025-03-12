@@ -1,24 +1,25 @@
 using System.Linq;
 using UnityEditor;
+using UnityEditor.Build;
 using UnityEngine;
 
 namespace BrutalHack.Submodules.BrutalBuild.Scripts.Config
 {
     public class GeneralPlayerSettingsAdapter
     {
-        // public string DefaultIconPath
-        // {
-        //     get
-        //     {
-        //         var texture2D = PlayerSettings.GetIconsForTargetGroup(BuildTargetGroup.Unknown).FirstOrDefault();
-        //         return texture2D != null ? AssetDatabase.GetAssetPath(texture2D) : null;
-        //     }
-        //     set
-        //     {
-        //         var icon = AssetDatabase.LoadAssetAtPath<Texture2D>(value);
-        //         PlayerSettings.SetIconsForTargetGroup(BuildTargetGroup.Unknown, new[] {icon});
-        //     }
-        // }
+        public string DefaultIconPath
+        {
+            get
+            {
+                var texture2D = PlayerSettings.GetIcons(NamedBuildTarget.Unknown, IconKind.Any).FirstOrDefault();
+                return texture2D != null ? AssetDatabase.GetAssetPath(texture2D) : null;
+            }
+            set
+            {
+                var icon = AssetDatabase.LoadAssetAtPath<Texture2D>(value);
+                PlayerSettings.SetIcons(NamedBuildTarget.Unknown, new[] {icon}, IconKind.Any);
+            }
+        }
 
         public string DefaultCursorPath
         {
