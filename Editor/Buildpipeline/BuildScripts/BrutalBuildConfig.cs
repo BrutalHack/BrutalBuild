@@ -2,6 +2,7 @@ using System;
 using System.Text.RegularExpressions;
 using UnityEngine;
 using AppContext = BrutalHack.Submodules.BrutalBuild.Scripts.Buildpipeline.Enums.AppContext;
+using UnityEngine.Serialization;
 
 namespace BrutalHack.Submodules.BrutalBuild.Scripts.Buildpipeline.BuildScripts
 {
