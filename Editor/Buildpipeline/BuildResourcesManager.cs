@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Xml.Serialization;
 using BrutalHack.Submodules.BrutalBuild.Scripts.Buildpipeline.Enums;
 using BrutalHack.Submodules.BrutalBuild.Scripts.Config;
@@ -44,7 +43,6 @@ namespace BrutalHack.Submodules.BrutalBuild.Scripts.Buildpipeline
 		{
 
 			var buildConfig = GetBuildConfig();
-			UnityConnectUtils.SetCloudProjectId(buildConfig.UnityCloudSettings);
 			PlayerSettingsAdapter.Import(buildConfig.PlayerSettings);
 			AddAppContextToDefineSymbols();
 		}

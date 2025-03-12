@@ -6,16 +6,6 @@
     <xs:element name="BuildConfig">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="UnityCloudSettings">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element name="Id" type="xs:string"/>
-                            <xs:element name="Product" type="xs:string"/>
-                            <xs:element name="Company" type="xs:string"/>
-                        </xs:sequence>
-                    </xs:complexType>
-                </xs:element>
-
                 <xs:element name="PlayerSettings">
                     <xs:complexType>
                         <xs:sequence>
@@ -79,7 +69,8 @@
                                                     <xs:element name="ShaderPrecisionModel" type="xs:string"/>
                                                     <xs:element name="EnableVulkanSrgbWrite" type="xs:boolean"/>
                                                     <xs:element name="VulkanNumberOfSwapChainBuffers" type="xs:int"/>
-                                                    <xs:element name="VulkanLateAcquireSwapchainImage" type="xs:boolean"/>
+                                                    <xs:element name="VulkanLateAcquireSwapchainImage"
+                                                                type="xs:boolean"/>
                                                     <xs:element name="BundleIdentifier" type="xs:string"/>
                                                     <xs:element name="Build" type="xs:boolean"/>
                                                     <xs:element name="UseMacAppStoreValidation" type="xs:boolean"/>
