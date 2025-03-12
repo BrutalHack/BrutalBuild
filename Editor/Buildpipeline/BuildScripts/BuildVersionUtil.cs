@@ -83,13 +83,14 @@ namespace BrutalHack.Submodules.BrutalBuild.Scripts.Buildpipeline.BuildScripts
         public static void Build(BrutalBuildConfig config, BrutalBuildEnvironment environment, bool isDebugBuild,
             string suffix = "")
         {
+            PlayerSettingsAdapter.General.ProductName = config.BuildEditionConfig.Name;
             var buildTarget = config.BuildPlatformConfig.BuildTarget;
             var buildTargetGroup = config.BuildPlatformConfig.BuildTargetGroup;
             if (buildTargetGroup == BuildTargetGroup.Android &&
                 buildTarget == BuildTarget.Android)
             {
-                BuildVersionUtil.SetKeystorePasswordsFromEnvironment();
-                BuildVersionUtil.RestoreGooglePlayGamesSettings();
+                SetKeystorePasswordsFromEnvironment();
+                RestoreGooglePlayGamesSettings();
             }
 
             BuildController.SetContext(config.AppContext, environment);
@@ -99,11 +100,13 @@ namespace BrutalHack.Submodules.BrutalBuild.Scripts.Buildpipeline.BuildScripts
                 EditorUserBuildSettings.SwitchActiveBuildTarget(buildTargetGroup, buildTarget);
             }
 
+			var fileSuffix = buildTarget == BuildTarget.StandaloneWindows64 ? ".exe" : "";
+
             var buildPlayerOptions = new BuildPlayerOptions
             {
                 scenes = config.BuildEditionConfig.GetAllScenePaths(),
                 locationPathName =
-                    $"Builds/{config.AppContext}/{buildTarget.ToString()}/{config.BuildEditionConfig.Name}/{config.BuildEditionConfig.Name}",
+                    $"Builds/{config.AppContext}/{buildTarget.ToString()}/{config.BuildEditionConfig.Name}/{config.BuildEditionConfig.Name}{fileSuffix}",
                 target = buildTarget,
                 options = BuildOptions.None
             };
@@ -112,7 +115,7 @@ namespace BrutalHack.Submodules.BrutalBuild.Scripts.Buildpipeline.BuildScripts
             EditorUserBuildSettings.allowDebugging = isDebugBuild;
             EditorUserBuildSettings.waitForManagedDebugger = isDebugBuild;
 
-            BuildVersionUtil.GenerateBuild(buildPlayerOptions);
+            GenerateBuild(buildPlayerOptions);
 
             PlayerSettingsAdapter.Standalone.ScriptingBackend = ScriptingImplementation.IL2CPP.ToString();
         }
