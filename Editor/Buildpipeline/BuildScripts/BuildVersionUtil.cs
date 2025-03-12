@@ -102,13 +102,19 @@ namespace BrutalHack.Submodules.BrutalBuild.Scripts.Buildpipeline.BuildScripts
 
 			var fileSuffix = buildTarget == BuildTarget.StandaloneWindows64 ? ".exe" : "";
 
+            var options = BuildOptions.None;
+            if (isDebugBuild)
+            {
+                options = BuildOptions.Development | BuildOptions.AllowDebugging;
+            }
+
             var buildPlayerOptions = new BuildPlayerOptions
             {
                 scenes = config.BuildEditionConfig.GetAllScenePaths(),
                 locationPathName =
                     $"Builds/{config.AppContext}/{buildTarget.ToString()}/{config.BuildEditionConfig.Name}/{config.BuildEditionConfig.Name}{fileSuffix}",
                 target = buildTarget,
-                options = BuildOptions.None
+                options = options
             };
 
             EditorUserBuildSettings.development = isDebugBuild;
