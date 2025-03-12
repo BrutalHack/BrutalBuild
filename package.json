@@ -1,5 +1,5 @@
 {
-    "name": "com.BrutalHack.BrutalBuild",
+    "name": "com.brutalhack.brutalbuild",
     "version": "1.0.0",
     "displayName": "BrutalBuild",
     "description": "Foundation for writing Build Scripts which control PlayerSettings and App Settings",

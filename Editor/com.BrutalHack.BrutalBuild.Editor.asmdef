@@ -1,5 +1,5 @@
 {
-    "name": "com.BrutalHack.BrutalBuild",
+    "name": "BrutalHack.BrutalBuild.Editor",
     "references": [],
     "includePlatforms": [
         "Editor"

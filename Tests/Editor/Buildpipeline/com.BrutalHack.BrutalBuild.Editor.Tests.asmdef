@@ -1,9 +1,9 @@
 {
-    "name": "BrutalHack.BrutalBuild.Tests",
+    "name": "BrutalHack.BrutalBuild.Editor.Tests",
     "references": [
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
-        "BrutalHack.BrutalBuild"
+        "BrutalHack.BrutalBuild.Editor"
     ],
     "includePlatforms": [
         "Editor"
