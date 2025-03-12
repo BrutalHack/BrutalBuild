@@ -2,7 +2,7 @@ using Sirenix.OdinInspector;
 using UnityEditor;
 using UnityEngine;
 
-namespace Editor.BuildScripts
+namespace BrutalHack.Submodules.BrutalBuild.Scripts.Buildpipeline.BuildScripts
 {
     [CreateAssetMenu(fileName = "BrutalPlatformConfig", menuName = "BrutalHack/BrutalPlatformConfig", order = 0)]
     public class BuildPlatformConfig : ScriptableObject

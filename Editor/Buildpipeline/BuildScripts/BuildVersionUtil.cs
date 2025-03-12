@@ -7,7 +7,7 @@ using UnityEditor;
 using UnityEditor.Build.Reporting;
 using Debug = UnityEngine.Debug;
 
-namespace DokiDokiRagnarok.Editor.BuildScripts
+namespace BrutalHack.Submodules.BrutalBuild.Scripts.Buildpipeline.BuildScripts
 {
     public static class BuildVersionUtil
     {

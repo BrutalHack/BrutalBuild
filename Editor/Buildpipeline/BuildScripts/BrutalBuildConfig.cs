@@ -2,7 +2,7 @@ using System;
 using System.Text.RegularExpressions;
 using UnityEngine;
 
-namespace Editor.BuildScripts
+namespace BrutalHack.Submodules.BrutalBuild.Scripts.Buildpipeline.BuildScripts
 {
     [CreateAssetMenu(fileName = "BrutalBuildConfig", menuName = "BrutalHack/BrutalBuildConfig", order = 0)]
     public class BrutalBuildConfig : ScriptableObject
