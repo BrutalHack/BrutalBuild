@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace BrutalHack.Submodules.BrutalBuild.Scripts.Config
 {
-    public class AndroidPlayerSettingsManager
+    public class AndroidPlayerSettingsAdapter
     {
         #region Android Resolution and Presentation
 
@@ -119,12 +119,6 @@ namespace BrutalHack.Submodules.BrutalBuild.Scripts.Config
         {
             get => PlayerSettings.GetApplicationIdentifier(BuildTargetGroup.Android);
             set => PlayerSettings.SetApplicationIdentifier(BuildTargetGroup.Android, value);
-        }
-
-        public string Version
-        {
-            get => PlayerSettings.bundleVersion;
-            set => PlayerSettings.bundleVersion = value;
         }
 
         public int BundleVersionCode

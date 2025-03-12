@@ -16,7 +16,6 @@ namespace BrutalHack.Submodules.BrutalBuild.Scripts.Config.Build.Ios
 
         // Identification
         public string BundleIdentifier = PlayerSettingsAdapter.Ios.BundleIdentifier;
-        public string Version = PlayerSettingsAdapter.Ios.Version;
         public string Build = PlayerSettingsAdapter.Ios.Build;
         public string SigningTeamId = PlayerSettingsAdapter.Ios.SigningTeamId;
         public bool AutomaticallySign = PlayerSettingsAdapter.Ios.AutomaticallySign;

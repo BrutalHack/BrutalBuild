@@ -4,7 +4,7 @@ using UnityEngine.iOS;
 
 namespace BrutalHack.Submodules.BrutalBuild.Scripts.Config
 {
-    public class IosPlayerSettingsManager
+    public class IosPlayerSettingsAdapter
     {
         #region iOS Resolution and Presentation 
 
@@ -130,12 +130,6 @@ namespace BrutalHack.Submodules.BrutalBuild.Scripts.Config
         {
             get => PlayerSettings.GetApplicationIdentifier(BuildTargetGroup.iOS);
             set => PlayerSettings.SetApplicationIdentifier(BuildTargetGroup.iOS, value);
-        }
-
-        public string Version
-        {
-            get => PlayerSettings.bundleVersion;
-            set => PlayerSettings.bundleVersion = value;
         }
 
         public string Build

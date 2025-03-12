@@ -162,7 +162,7 @@ namespace BrutalHack.Submodules.BrutalBuild.Scripts.Buildpipeline
         {
             Directory.CreateDirectory("Assets/BuildResources/Exported");
             var xmlFileLocation =
-                $"Assets/BuildResources/Exported/{typeof(T).Name}-{DateTime.Today.ToString("yyyy-mm-dd")}.xml";
+                $"Assets/BuildResources/Exported/{typeof(T).Name}-{DateTime.Now:yyyy-MM-dd-HH-mm}.xml";
 
             TextWriter writer = new StreamWriter(xmlFileLocation);
             var globalSettingsSerializer = new XmlSerializer(typeof(T));

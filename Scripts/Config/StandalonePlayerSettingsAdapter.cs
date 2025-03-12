@@ -7,8 +7,7 @@ using UnityEngine.iOS;
 
 namespace BrutalHack.Submodules.BrutalBuild.Scripts.Config
 {
-    //TODO implement xml serialization
-    public class StandalonePlayerSettingsManager
+    public class StandalonePlayerSettingsAdapter
     {
         #region Standalone Icon
 
@@ -22,7 +21,7 @@ namespace BrutalHack.Submodules.BrutalBuild.Scripts.Config
 
         #region Standalone Resolution and Presentation
 
-        public FullScreenMode FullScreenMode
+        public FullScreenMode FullscreenMode
         {
             get => PlayerSettings.fullScreenMode;
             set => PlayerSettings.fullScreenMode = value;
@@ -133,8 +132,8 @@ namespace BrutalHack.Submodules.BrutalBuild.Scripts.Config
 
         public bool AutoGraphicsApiWindows
         {
-            get => PlayerSettings.GetUseDefaultGraphicsAPIs(BuildTarget.StandaloneWindows);
-            set => PlayerSettings.SetUseDefaultGraphicsAPIs(BuildTarget.StandaloneWindows, value);
+            get => PlayerSettings.GetUseDefaultGraphicsAPIs(BuildTarget.StandaloneWindows64);
+            set => PlayerSettings.SetUseDefaultGraphicsAPIs(BuildTarget.StandaloneWindows64, value);
         }
 
         public bool AutoGraphicsApiMac
@@ -149,10 +148,40 @@ namespace BrutalHack.Submodules.BrutalBuild.Scripts.Config
             set => PlayerSettings.SetUseDefaultGraphicsAPIs(BuildTarget.StandaloneLinux64, value);
         }
 
+        public bool EnableMetalApiValidation
+        {
+            get => PlayerSettings.enableMetalAPIValidation;
+            set => PlayerSettings.enableMetalAPIValidation = value;
+        }
+
         public bool GpuSkinning
         {
             get => PlayerSettings.gpuSkinning;
             set => PlayerSettings.gpuSkinning = value;
+        }
+
+        public bool UseHdrDisplay
+        {
+            get => PlayerSettings.useHDRDisplay;
+            set => PlayerSettings.useHDRDisplay = value;
+        }
+
+        public string HdrSwapChainBitDepth
+        {
+            get => PlayerSettings.D3DHDRBitDepth.ToString();
+            set => PlayerSettings.D3DHDRBitDepth = EnumUtils.ParseEnum<D3DHDRDisplayBitDepth>(value);
+        }
+
+        public bool EnableVirtualTexturing
+        {
+            get => PlayerSettings.GetVirtualTexturingSupportEnabled();
+            set => PlayerSettings.SetVirtualTexturingSupportEnabled(value);
+        }
+
+        public string ShaderPrecisionModel
+        {
+            get => PlayerSettings.GetShaderPrecisionModel().ToString();
+            set => EnumUtils.ParseEnum<ShaderPrecisionModel>(value);
         }
 
         public bool GraphicsJobs
@@ -167,10 +196,26 @@ namespace BrutalHack.Submodules.BrutalBuild.Scripts.Config
             set => PlayerSettings.enableFrameTimingStats = value;
         }
 
-        public bool ProtectGraphicsMemory
+        #endregion
+
+        #region Vulkan Settings
+
+        public bool EnableVulkanSrgbWrite
         {
-            get => PlayerSettings.protectGraphicsMemory;
-            set => PlayerSettings.protectGraphicsMemory = value;
+            get => PlayerSettings.vulkanEnableSetSRGBWrite;
+            set => PlayerSettings.vulkanEnableSetSRGBWrite = value;
+        }
+
+        public uint VulkanNumberOfSwapChainBuffers
+        {
+            get => PlayerSettings.vulkanNumSwapchainBuffers;
+            set => PlayerSettings.vulkanNumSwapchainBuffers = value;
+        }
+
+        public bool VulkanLateAcquireSwapchainImage
+        {
+            get => PlayerSettings.vulkanEnableLateAcquireNextImage;
+            set => PlayerSettings.vulkanEnableLateAcquireNextImage = value;
         }
 
         #endregion
@@ -183,22 +228,16 @@ namespace BrutalHack.Submodules.BrutalBuild.Scripts.Config
             set => PlayerSettings.SetApplicationIdentifier(BuildTargetGroup.Standalone, value);
         }
 
+        public string Build
+        {
+            get => PlayerSettings.macOS.buildNumber;
+            set => PlayerSettings.macOS.buildNumber = value;
+        }
+
         public bool UseMacAppStoreValidation
         {
             get => PlayerSettings.useMacAppStoreValidation;
             set => PlayerSettings.useMacAppStoreValidation = value;
-        }
-
-        public string Version
-        {
-            get => PlayerSettings.bundleVersion;
-            set => PlayerSettings.bundleVersion = value;
-        }
-
-        public int BundleVersionCode
-        {
-            get => PlayerSettings.Android.bundleVersionCode;
-            set => PlayerSettings.Android.bundleVersionCode = value;
         }
 
         #endregion
@@ -221,23 +260,44 @@ namespace BrutalHack.Submodules.BrutalBuild.Scripts.Config
 
         public string CppCompilerConfiguration
         {
-            get => PlayerSettings.GetIl2CppCompilerConfiguration(BuildTargetGroup.Android).ToString();
+            get => PlayerSettings.GetIl2CppCompilerConfiguration(BuildTargetGroup.Standalone).ToString();
             set =>
-                PlayerSettings.SetIl2CppCompilerConfiguration(BuildTargetGroup.Android,
+                PlayerSettings.SetIl2CppCompilerConfiguration(BuildTargetGroup.Standalone,
                     EnumUtils.ParseEnum<Il2CppCompilerConfiguration>(value));
         }
 
-        public string IncrementalIl2CppBuild
+        public bool IncrementalGc
         {
-            get => PlayerSettings.GetIncrementalIl2CppBuild(BuildTargetGroup.Standalone).ToString();
-            set => PlayerSettings.SetIl2CppCompilerConfiguration(BuildTargetGroup.Standalone,
-                EnumUtils.ParseEnum<Il2CppCompilerConfiguration>(value));
+            get => PlayerSettings.gcIncremental;
+            set => PlayerSettings.gcIncremental = value;
         }
+
+        public bool MonoAssemblyVersionValidation
+        {
+            get => PlayerSettings.assemblyVersionValidation;
+            set => PlayerSettings.assemblyVersionValidation = value;
+        }
+
+        #endregion
+
+        #region Script Compilation
 
         public string ScriptingDefineSymbols
         {
-            get => PlayerSettings.GetScriptingDefineSymbolsForGroup(BuildTargetGroup.Android);
-            set => PlayerSettings.SetScriptingDefineSymbolsForGroup(BuildTargetGroup.Android, value);
+            get => PlayerSettings.GetScriptingDefineSymbolsForGroup(BuildTargetGroup.Standalone);
+            set => PlayerSettings.SetScriptingDefineSymbolsForGroup(BuildTargetGroup.Standalone, value);
+        }
+
+        public string[] AdditionalCompilerArguments
+        {
+            get => PlayerSettings.GetAdditionalCompilerArgumentsForGroup(BuildTargetGroup.Standalone);
+            set => PlayerSettings.SetAdditionalCompilerArgumentsForGroup(BuildTargetGroup.Standalone, value);
+        }
+
+        public bool SuppressCommonWarnings
+        {
+            get => PlayerSettings.suppressCommonWarnings;
+            set => PlayerSettings.suppressCommonWarnings = value;
         }
 
         public bool AllowUnsafeCode
@@ -256,10 +316,58 @@ namespace BrutalHack.Submodules.BrutalBuild.Scripts.Config
             set => PlayerSettings.bakeCollisionMeshes = value;
         }
 
+        public string ManagedStrippingLevel
+        {
+            get => PlayerSettings.GetManagedStrippingLevel(BuildTargetGroup.Standalone).ToString();
+            set => PlayerSettings.SetManagedStrippingLevel(BuildTargetGroup.Standalone,
+                EnumUtils.ParseEnum<ManagedStrippingLevel>(value));
+        }
+
+        public bool StripUnusedMeshComponents
+        {
+            get => PlayerSettings.stripUnusedMeshComponents;
+            set => PlayerSettings.stripUnusedMeshComponents = value;
+        }
+
         public bool StripEngineCode
         {
             get => PlayerSettings.stripEngineCode;
             set => PlayerSettings.stripEngineCode = value;
+        }
+
+        #endregion
+
+        #region Stack Trace
+
+        public string ErrorStackTrace
+        {
+            get => PlayerSettings.GetStackTraceLogType(LogType.Error).ToString();
+            set => PlayerSettings.SetStackTraceLogType(LogType.Error, EnumUtils.ParseEnum<StackTraceLogType>(value));
+        }
+
+        public string AssertStackTrace
+        {
+            get => PlayerSettings.GetStackTraceLogType(LogType.Assert).ToString();
+            set => PlayerSettings.SetStackTraceLogType(LogType.Assert, EnumUtils.ParseEnum<StackTraceLogType>(value));
+        }
+
+        public string WarningStackTrace
+        {
+            get => PlayerSettings.GetStackTraceLogType(LogType.Warning).ToString();
+            set => PlayerSettings.SetStackTraceLogType(LogType.Warning, EnumUtils.ParseEnum<StackTraceLogType>(value));
+        }
+
+        public string LogStackTrace
+        {
+            get => PlayerSettings.GetStackTraceLogType(LogType.Log).ToString();
+            set => PlayerSettings.SetStackTraceLogType(LogType.Log, EnumUtils.ParseEnum<StackTraceLogType>(value));
+        }
+
+        public string ExceptionStackTrace
+        {
+            get => PlayerSettings.GetStackTraceLogType(LogType.Exception).ToString();
+            set =>
+                PlayerSettings.SetStackTraceLogType(LogType.Exception, EnumUtils.ParseEnum<StackTraceLogType>(value));
         }
 
         #endregion

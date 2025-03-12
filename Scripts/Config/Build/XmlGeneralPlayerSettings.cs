@@ -9,5 +9,6 @@ namespace BrutalHack.Submodules.BrutalBuild.Scripts.Config.Build
         public string ProductName = PlayerSettingsAdapter.General.ProductName;
         public string DefaultIconPath = PlayerSettingsAdapter.General.DefaultIconPath;
         public string DefaultCursorPath = PlayerSettingsAdapter.General.DefaultCursorPath;
+        public string Version = PlayerSettingsAdapter.General.Version;
     }
 }

@@ -7,14 +7,16 @@ namespace BrutalHack.Submodules.BrutalBuild.Scripts.Config
 {
     public static class PlayerSettingsAdapter
     {
-        public static readonly GeneralPlayerSettingsManager General = new GeneralPlayerSettingsManager();
-        public static readonly StandalonePlayerSettingsManager Standalone = new StandalonePlayerSettingsManager();
-        public static readonly IosPlayerSettingsManager Ios = new IosPlayerSettingsManager();
-        public static readonly AndroidPlayerSettingsManager Android = new AndroidPlayerSettingsManager();
+        public static readonly GeneralPlayerSettingsAdapter General = new GeneralPlayerSettingsAdapter();
+        public static readonly StandalonePlayerSettingsAdapter Standalone = new StandalonePlayerSettingsAdapter();
+        public static readonly IosPlayerSettingsAdapter Ios = new IosPlayerSettingsAdapter();
+        public static readonly AndroidPlayerSettingsAdapter Android = new AndroidPlayerSettingsAdapter();
 
         public static void Import(XmlPlayerSettings xmlPlayerSettings)
         {
             CopyFieldsToProperties(xmlPlayerSettings.General, General);
+            CopyFieldsToProperties(xmlPlayerSettings.Standalone.ResolutionAndPresentation, Standalone);
+            CopyFieldsToProperties(xmlPlayerSettings.Standalone.OtherSettings, Standalone);
             CopyFieldsToProperties(xmlPlayerSettings.Ios.ResolutionAndPresentation, Ios);
             CopyFieldsToProperties(xmlPlayerSettings.Ios.OtherSettings, Ios);
             CopyFieldsToProperties(xmlPlayerSettings.Android.ResolutionAndPresentation, Android);

@@ -7,14 +7,14 @@ namespace BrutalHack.Submodules.BrutalBuild.Scripts.Buildpipeline.MenuItems
     {
         #region General
 
-        [MenuItem(BuildMenuLabels.ChangeContextGeneralDevDebug)]
+        [MenuItem(BuildMenuLabels.ChangeContextReleaseDevDebug)]
         public static void ChangeContextGeneralDev()
         {
             BuildController.SetContext(AppContext.Release, Environment.Dev);
         }
 
 
-        [MenuItem(BuildMenuLabels.ChangeContextGeneralProdDebug)]
+        [MenuItem(BuildMenuLabels.ChangeContextReleaseProdDebug)]
         public static void ChangeContextGeneralProd()
         {
             BuildController.SetContext(AppContext.Release, Environment.Prod);

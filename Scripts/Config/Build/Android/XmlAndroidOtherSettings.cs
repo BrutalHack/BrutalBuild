@@ -15,7 +15,6 @@ namespace BrutalHack.Submodules.BrutalBuild.Scripts.Config.Build.Android
 
         // Identification
         public string BundleIdentifier = PlayerSettingsAdapter.Android.BundleIdentifier;
-        public string Version = PlayerSettingsAdapter.Android.Version;
         public int BundleVersionCode = PlayerSettingsAdapter.Android.BundleVersionCode;
         public string MinimumApiLevel = PlayerSettingsAdapter.Android.MinimumApiLevel;
         public string TargetSdkVersion = PlayerSettingsAdapter.Android.TargetSdkVersion;

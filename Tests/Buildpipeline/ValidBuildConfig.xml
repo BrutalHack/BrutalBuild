@@ -6,6 +6,7 @@
 		<Id>00000000-0000-0000-0000-000000000000</Id>
 		<Product>mock</Product>
 		<Company>mock</Company>
+		<Version>100.0.0</Version>
 	</UnityCloudSettings>
 	<PlayerSettings>
 		<General>
@@ -36,7 +37,6 @@
 				<GpuSkinning>true</GpuSkinning>
 				<GraphicsJobs>false</GraphicsJobs>
 				<BundleIdentifier>mock.mock</BundleIdentifier>
-				<Version>100.0.0</Version>
 				<Build>0</Build>
 				<SigningTeamId>0000000000</SigningTeamId>
 				<AutomaticallySign>true</AutomaticallySign>

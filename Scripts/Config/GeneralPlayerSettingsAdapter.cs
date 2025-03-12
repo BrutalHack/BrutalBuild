@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace BrutalHack.Submodules.BrutalBuild.Scripts.Config
 {
-    public class GeneralPlayerSettingsManager
+    public class GeneralPlayerSettingsAdapter
     {
         public string DefaultIconPath
         {
@@ -44,6 +44,12 @@ namespace BrutalHack.Submodules.BrutalBuild.Scripts.Config
         {
             get => PlayerSettings.productName;
             set => PlayerSettings.productName = value;
+        }
+        
+        public string Version
+        {
+            get => PlayerSettings.bundleVersion;
+            set => PlayerSettings.bundleVersion = value;
         }
     }
 }
