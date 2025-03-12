@@ -9,6 +9,7 @@ namespace BrutalHack.Submodules.BrutalBuild.Scripts.Buildpipeline.Enums
         AppleAppStore,
         GooglePlayStore,
         AmazonAppStore,
-        Demo
+        Demo,
+		Prologue
     }
 }
