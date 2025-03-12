@@ -94,6 +94,7 @@ namespace BrutalHack.Submodules.BrutalBuild.Scripts.Buildpipeline.BuildScripts
             }
 
             BuildController.SetContext(config.AppContext, environment);
+            PlayerSettingsAdapter.General.Version = config.Version;
 
             if (EditorUserBuildSettings.activeBuildTarget != buildTarget)
             {
