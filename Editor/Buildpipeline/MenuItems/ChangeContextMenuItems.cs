@@ -21,22 +21,5 @@ namespace BrutalHack.Submodules.BrutalBuild.Scripts.Buildpipeline.MenuItems
         }
 
         #endregion
-
-        #region Demo
-
-        [MenuItem(BuildMenuLabels.ChangeContextDemoDevDebug)]
-        public static void ChangeContextDemoDev()
-        {
-            BuildController.SetContext(AppContext.Demo, Environment.Dev);
-        }
-
-
-        [MenuItem(BuildMenuLabels.ChangeContextDemoProdDebug)]
-        public static void ChangeContextDemoProd()
-        {
-            BuildController.SetContext(AppContext.Demo, Environment.Prod);
-        }
-
-        #endregion
     }
 }
