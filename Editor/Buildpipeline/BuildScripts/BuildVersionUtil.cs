@@ -69,7 +69,7 @@ namespace DokiDokiRagnarok.Editor.BuildScripts
             Debug.Log($"Copied {fileName} from {sourceFilePath} to {targetFilePath}");
         }
 
-        private static double BuildWithStopWatch(Stopwatch stopwatch, Action action)
+        public static double BuildWithStopWatch(Stopwatch stopwatch, Action action)
         {
             stopwatch.Restart();
             action.Invoke();
