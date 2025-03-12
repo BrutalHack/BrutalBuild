@@ -7,6 +7,8 @@ namespace BrutalHack.Submodules.BrutalBuild.Scripts.Buildpipeline.Enums
         Release,
         ReleaseSteam,
         Demo,
-        ReleaseAppStore
+        ReleaseAppleAppStore,
+        ReleaseGooglePlayStore,
+        ReleaseAmazonAppStore
     }
 }
