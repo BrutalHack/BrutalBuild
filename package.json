@@ -1,0 +1,18 @@
+{
+    "name": "com.BrutalHack.BrutalBuild",
+    "version": "1.0.0",
+    "displayName": "BrutalBuild",
+    "description": "Foundation for writing Build Scripts which control PlayerSettings and App Settings",
+    "unity": "2021.2",
+    "unityRelease": "14f1",
+    "keywords": [
+      "Build",
+      "Player Settings",
+      "BuildConfig"
+    ],
+    "author": {
+      "name": "Benjamin Justice",
+      "email": "benjamin.justice@BrutalHack.com",
+      "url": "https://www.BrutalHack.com"
+    }
+  }
