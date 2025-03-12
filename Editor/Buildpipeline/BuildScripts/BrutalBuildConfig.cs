@@ -12,6 +12,8 @@ namespace BrutalHack.Submodules.BrutalBuild.Scripts.Buildpipeline.BuildScripts
         public AppContext AppContext;
         public BuildEditionConfig BuildEditionConfig;
         public BuildPlatformConfig BuildPlatformConfig;
+        public bool IsDebug;
+
 
         public string Version
         {
