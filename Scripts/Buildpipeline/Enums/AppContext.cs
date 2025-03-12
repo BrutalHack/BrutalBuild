@@ -6,6 +6,7 @@ namespace BrutalHack.Submodules.BrutalBuild.Scripts.Buildpipeline.Enums
     {
         Release,
         ReleaseSteam,
-        Demo
+        Demo,
+        ReleaseAppStore
     }
 }
