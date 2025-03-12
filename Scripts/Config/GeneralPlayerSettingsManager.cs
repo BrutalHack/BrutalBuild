@@ -20,6 +20,20 @@ namespace BrutalHack.Submodules.BrutalBuild.Scripts.Config
             }
         }
 
+        public string DefaultCursorPath
+        {
+            get
+            {
+                var texture2D = PlayerSettings.defaultCursor;
+                return texture2D != null ? AssetDatabase.GetAssetPath(texture2D) : null;
+            }
+            set
+            {
+                var cursor = AssetDatabase.LoadAssetAtPath<Texture2D>(value);
+                PlayerSettings.defaultCursor = cursor;
+            }
+        }
+
         public string CompanyName
         {
             get => PlayerSettings.companyName;

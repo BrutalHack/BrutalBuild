@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema targetNamespace="http://sympatient.com/build-config"
+<xs:schema targetNamespace="http://brutalhack.com/build-config"
 		   elementFormDefault="qualified"
-		   xmlns="http://sympatient.com/build-config"
+		   xmlns="http://brutalhack.com/build-config"
 		   xmlns:xs="http://www.w3.org/2001/XMLSchema">
 	<xs:element name="BuildConfig">
 		<xs:complexType>
@@ -26,6 +26,7 @@
 										<xs:element name="CompanyName" type="xs:string"/>
 										<xs:element name="ProductName" type="xs:string"/>
 										<xs:element name="DefaultIconPath" type="xs:string"/>
+										<xs:element name="DefaultCursorPath" type="xs:string"/>
 									</xs:sequence>
 								</xs:complexType>
 							</xs:element>
