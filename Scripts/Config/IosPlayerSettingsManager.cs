@@ -312,32 +312,5 @@ namespace BrutalHack.Submodules.BrutalBuild.Scripts.Config
 
         #endregion
 
-        #region iOS XR
-
-        public bool VirtualRealitySupported
-        {
-            get => PlayerSettings.GetVirtualRealitySupported(BuildTargetGroup.iOS);
-            set => PlayerSettings.SetVirtualRealitySupported(BuildTargetGroup.iOS, value);
-        }
-
-        public string[] VirtualRealitySdks
-        {
-            get => PlayerSettings.GetVirtualRealitySDKs(BuildTargetGroup.iOS);
-            set => PlayerSettings.SetVirtualRealitySDKs(BuildTargetGroup.iOS, value);
-        }
-
-        public int CardboardDepthFormat
-        {
-            get => PlayerSettings.VRCardboard.depthFormat;
-            set => PlayerSettings.VRCardboard.depthFormat = value;
-        }
-
-        public string StereoRenderingMethod
-        {
-            get => PlayerSettings.stereoRenderingPath.ToString();
-            set => PlayerSettings.stereoRenderingPath = EnumUtils.ParseEnum<StereoRenderingPath>(value);
-        }
-
-        #endregion
     }
 }

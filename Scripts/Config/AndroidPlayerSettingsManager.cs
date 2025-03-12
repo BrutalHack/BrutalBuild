@@ -1,5 +1,4 @@
 using UnityEditor;
-using UnityEditor.XR.Daydream;
 using UnityEngine;
 
 namespace BrutalHack.Submodules.BrutalBuild.Scripts.Config
@@ -276,64 +275,5 @@ namespace BrutalHack.Submodules.BrutalBuild.Scripts.Config
 
         #endregion
 
-        #region Android XR
-
-        public bool VirtualRealitySupported
-        {
-            get => PlayerSettings.GetVirtualRealitySupported(BuildTargetGroup.Android);
-            set => PlayerSettings.SetVirtualRealitySupported(BuildTargetGroup.Android, value);
-        }
-
-        public string[] VirtualRealitySdks
-        {
-            get => PlayerSettings.GetVirtualRealitySDKs(BuildTargetGroup.Android);
-            set => PlayerSettings.SetVirtualRealitySDKs(BuildTargetGroup.Android, value);
-        }
-
-        public int CardboardDepthFormat
-        {
-            get => PlayerSettings.VRCardboard.depthFormat;
-            set => PlayerSettings.VRCardboard.depthFormat = value;
-        }
-
-        public int DaydreamDepthFormat
-        {
-            get => PlayerSettings.VRDaydream.depthFormat;
-            set => PlayerSettings.VRDaydream.depthFormat = value;
-        }
-
-        public bool DaydreamEnableVideoSurface
-        {
-            get => PlayerSettings.VRDaydream.enableVideoSurface;
-            set => PlayerSettings.VRDaydream.enableVideoSurface = value;
-        }
-
-        public bool DaydreamEnableVideoSurfaceProtectedMemory
-        {
-            get => PlayerSettings.VRDaydream.enableVideoSurfaceProtectedMemory;
-            set => PlayerSettings.VRDaydream.enableVideoSurfaceProtectedMemory = value;
-        }
-
-        public string DaydreamMaximumSupportedHeadTracking
-        {
-            get => PlayerSettings.VRDaydream.maximumSupportedHeadTracking.ToString();
-            set => PlayerSettings.VRDaydream.maximumSupportedHeadTracking =
-                EnumUtils.ParseEnum<SupportedHeadTracking>(value);
-        }
-
-        public string DaydreamMinimumSupportedHeadTracking
-        {
-            get => PlayerSettings.VRDaydream.minimumSupportedHeadTracking.ToString();
-            set => PlayerSettings.VRDaydream.minimumSupportedHeadTracking =
-                EnumUtils.ParseEnum<SupportedHeadTracking>(value);
-        }
-
-        public string StereoRenderingMethod
-        {
-            get => PlayerSettings.stereoRenderingPath.ToString();
-            set => PlayerSettings.stereoRenderingPath = EnumUtils.ParseEnum<StereoRenderingPath>(value);
-        }
-
-        #endregion
     }
 }

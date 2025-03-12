@@ -7,6 +7,5 @@ namespace BrutalHack.Submodules.BrutalBuild.Scripts.Config.Build.Ios
     {
         public XmlIosResolutionAndPresentation ResolutionAndPresentation = new XmlIosResolutionAndPresentation();
         public XmlIosOtherSettings OtherSettings = new XmlIosOtherSettings();
-        public XmlIosXrSettings XrSettings = new XmlIosXrSettings();
     }
 }

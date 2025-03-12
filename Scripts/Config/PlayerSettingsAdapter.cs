@@ -17,11 +17,9 @@ namespace BrutalHack.Submodules.BrutalBuild.Scripts.Config
             CopyFieldsToProperties(xmlPlayerSettings.General, General);
             CopyFieldsToProperties(xmlPlayerSettings.Ios.ResolutionAndPresentation, Ios);
             CopyFieldsToProperties(xmlPlayerSettings.Ios.OtherSettings, Ios);
-            CopyFieldsToProperties(xmlPlayerSettings.Ios.XrSettings, Ios);
             CopyFieldsToProperties(xmlPlayerSettings.Android.ResolutionAndPresentation, Android);
             CopyFieldsToProperties(xmlPlayerSettings.Android.OtherSettings, Android);
             CopyFieldsToProperties(xmlPlayerSettings.Android.PublishingSettings, Android);
-            CopyFieldsToProperties(xmlPlayerSettings.Android.XrSettings, Android);
         }
 
         private static void CopyFieldsToProperties(object source, object target)

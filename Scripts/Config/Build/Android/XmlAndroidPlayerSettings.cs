@@ -8,6 +8,5 @@ namespace BrutalHack.Submodules.BrutalBuild.Scripts.Config.Build.Android
         public XmlAndroidResolutionAndPresentation ResolutionAndPresentation = new XmlAndroidResolutionAndPresentation();
         public XmlAndroidOtherSettings OtherSettings = new XmlAndroidOtherSettings();
         public XmlAndroidPublishingSettings PublishingSettings = new XmlAndroidPublishingSettings();
-        public XmlAndroidXrSettings XrSettings = new XmlAndroidXrSettings();
     }
 }
